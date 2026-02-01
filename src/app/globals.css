@@ -1,0 +1,298 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+/* ===== BASE COMPONENTS ===== */
+@layer components {
+  /* Cards */
+  .card {
+    @apply bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 shadow-2xl overflow-hidden;
+  }
+
+  .card-header {
+    @apply bg-gradient-to-r from-gray-800/80 to-gray-900/80 backdrop-blur px-5 py-4 border-b border-white/10;
+  }
+
+  .card-body {
+    @apply p-4;
+  }
+
+  /* Episode Card Variants */
+  .episode-card {
+    @apply bg-white dark:bg-gray-800 rounded-xl border-2 overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 h-full flex flex-col;
+  }
+
+  .episode-card-blue {
+    @apply border-blue-200 dark:border-blue-800;
+  }
+
+  .episode-card-green {
+    @apply border-green-200 dark:border-green-800;
+  }
+
+  .episode-card-purple {
+    @apply border-purple-200 dark:border-purple-800;
+  }
+
+  /* Episode Card Headers */
+  .episode-header {
+    @apply px-4 py-3;
+  }
+
+  .episode-header-blue {
+    @apply bg-gradient-to-r from-blue-500 to-blue-600;
+  }
+
+  .episode-header-green {
+    @apply bg-gradient-to-r from-green-500 to-emerald-600;
+  }
+
+  .episode-header-purple {
+    @apply bg-gradient-to-r from-purple-500 to-purple-600;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply font-medium transition-all duration-200 rounded-lg disabled:cursor-not-allowed;
+  }
+
+  .btn-icon {
+    @apply p-2;
+  }
+
+  .btn-primary {
+    @apply bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600;
+  }
+
+  .btn-primary-disabled {
+    @apply bg-gray-50 dark:bg-gray-800 text-gray-300 dark:text-gray-600;
+  }
+
+  .btn-active {
+    @apply bg-blue-500 text-white shadow-md shadow-blue-500/30;
+  }
+
+  .btn-ghost {
+    @apply bg-white/10 hover:bg-white/20 text-white/90 backdrop-blur;
+  }
+
+  /* Badges */
+  .badge {
+    @apply text-xs font-mono px-2 py-1 rounded-md flex-shrink-0 font-semibold;
+  }
+
+  .badge-blue {
+    @apply bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200;
+  }
+
+  .badge-green {
+    @apply bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200;
+  }
+
+  .badge-purple {
+    @apply bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200;
+  }
+
+  /* Status Indicator */
+  .status-dot {
+    @apply w-2 h-2 rounded-full shadow-sm;
+  }
+
+  .status-alive {
+    @apply bg-green-500 shadow-green-500/50;
+  }
+
+  .status-dead {
+    @apply bg-red-500 shadow-red-500/50;
+  }
+
+  .status-unknown {
+    @apply bg-gray-500 shadow-gray-500/50;
+  }
+
+  /* Status Badge */
+  .status-badge {
+    @apply flex items-center gap-1.5 bg-black/60 backdrop-blur-sm px-2 py-1 rounded-full;
+  }
+
+  /* Selected Indicator */
+  .selected-check {
+    @apply absolute top-2 right-2 bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center shadow-lg;
+  }
+
+  /* Selection Badge (in header) */
+  .selection-badge {
+    @apply flex items-center gap-2 bg-green-500/20 backdrop-blur px-3 py-1.5 rounded-full border border-green-500/30;
+  }
+
+  /* Character Card States */
+  .character-card {
+    @apply relative rounded-xl overflow-hidden transition-all duration-300 ring-1 ring-white/10;
+  }
+
+  .character-card-selected {
+    @apply ring-2 ring-green-400 ring-offset-2 ring-offset-slate-900 shadow-lg shadow-green-500/20 scale-[1.02];
+  }
+
+  .character-card-hover {
+    @apply hover:ring-white/30 cursor-pointer hover:shadow-xl hover:scale-[1.02];
+  }
+
+  .character-card-disabled {
+    @apply opacity-40 cursor-not-allowed grayscale;
+  }
+
+  /* Overlays */
+  .overlay-gradient {
+    @apply absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent;
+  }
+
+  .overlay-disabled {
+    @apply absolute inset-0 bg-black/50 flex items-center justify-center backdrop-blur-sm;
+  }
+
+  .overlay-hover {
+    @apply absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none;
+  }
+
+  /* Alert States */
+  .alert {
+    @apply rounded-xl p-8 shadow-lg;
+  }
+
+  .alert-warning {
+    @apply bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 border border-yellow-200 dark:border-yellow-800;
+  }
+
+  .alert-error {
+    @apply bg-gradient-to-r from-red-50 to-pink-50 dark:from-red-900/20 dark:to-pink-900/20 border border-red-200 dark:border-red-800;
+  }
+
+  .alert-error-compact {
+    @apply bg-gradient-to-br from-red-50 to-pink-50 dark:from-red-900/20 dark:to-pink-900/20 border-2 border-red-200 dark:border-red-800 rounded-2xl p-6 shadow-lg;
+  }
+
+  /* Skeleton Loading */
+  .skeleton {
+    @apply animate-pulse bg-gradient-to-br from-gray-700/50 to-gray-800/50 rounded-xl;
+  }
+
+  .skeleton-card {
+    @apply skeleton aspect-[4/3];
+  }
+
+  .skeleton-tall {
+    @apply skeleton h-96;
+  }
+
+  /* Stats Badge */
+  .stat-badge {
+    @apply px-4 py-2 rounded-lg text-sm;
+  }
+
+  .stat-badge-blue {
+    @apply bg-blue-100 dark:bg-blue-900/30;
+  }
+
+  .stat-badge-green {
+    @apply bg-green-100 dark:bg-green-900/30;
+  }
+
+  .stat-badge-purple {
+    @apply bg-purple-100 dark:bg-purple-900/30;
+  }
+
+  /* Page Background */
+  .page-bg {
+    @apply min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900;
+  }
+
+  /* Decorative Orbs */
+  .bg-orb {
+    @apply absolute w-80 h-80 rounded-full mix-blend-multiply filter blur-3xl animate-pulse;
+  }
+
+  /* Section Container */
+  .container-section {
+    @apply max-w-6xl mx-auto;
+  }
+
+  .container-wide {
+    @apply max-w-7xl mx-auto;
+  }
+
+  /* Title Gradient */
+  .title-gradient {
+    @apply bg-gradient-to-r from-green-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent;
+  }
+
+  .title-gradient-green-blue {
+    @apply bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent;
+  }
+
+  /* Episode Item */
+  .episode-item {
+    @apply p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg transition-colors cursor-default;
+  }
+
+  .episode-item-blue {
+    @apply hover:bg-blue-50 dark:hover:bg-blue-900/20;
+  }
+
+  .episode-item-green {
+    @apply hover:bg-green-50 dark:hover:bg-green-900/20;
+  }
+
+  .episode-item-purple {
+    @apply hover:bg-purple-50 dark:hover:bg-purple-900/20;
+  }
+
+  /* Scrollbar */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(156, 163, 175, 0.5) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: rgba(156, 163, 175, 0.5);
+    border-radius: 3px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
