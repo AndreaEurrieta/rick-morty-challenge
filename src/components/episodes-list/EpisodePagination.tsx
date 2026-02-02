@@ -10,27 +10,23 @@ export function EpisodePagination({
   onPageChange,
 }: EpisodePaginationProps) {
   return (
-    <div className="mt-3 flex items-center justify-between gap-2">
+    <div className="mt-3 flex-between gap-2">
       <button
         onClick={() => onPageChange(page - 1)}
         disabled={page <= 1}
-        className="px-3 py-1 text-xs font-medium rounded bg-gray-200 dark:bg-gray-700
-                   text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600
-                   disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+        className="btn btn-primary px-3 py-1 text-xs"
       >
         Anterior
       </button>
 
-      <span className="text-xs text-gray-600 dark:text-gray-400">
+      <span className="text-xs text-muted">
         Página {page} de {totalPages}
       </span>
 
       <button
         onClick={() => onPageChange(page + 1)}
         disabled={page >= totalPages}
-        className="px-3 py-1 text-xs font-medium rounded bg-gray-200 dark:bg-gray-700
-                   text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600
-                   disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+        className="btn btn-primary px-3 py-1 text-xs"
       >
         Siguiente
       </button>

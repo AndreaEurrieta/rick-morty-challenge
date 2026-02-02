@@ -21,7 +21,7 @@ export default function Error({ error, reset }: ErrorPageProps) {
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
             ¡Oops! Algo salió mal
           </h1>
-          <p className="text-gray-600 dark:text-gray-400">
+          <p className="text-muted">
             Ocurrió un error inesperado. Por favor, intenta nuevamente.
           </p>
         </div>

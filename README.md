@@ -6,7 +6,11 @@ Aplicacion web interactiva para explorar personajes del universo Rick and Morty 
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue?style=flat-square&logo=typescript)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC?style=flat-square&logo=tailwind-css)
 ![Zustand](https://img.shields.io/badge/Zustand-5.0-orange?style=flat-square)
-![Tests](https://img.shields.io/badge/Tests-63%20passing-green?style=flat-square)
+![Tests](https://img.shields.io/badge/Tests-141%20passing-green?style=flat-square)
+
+## Demo
+
+**[Ver aplicación en vivo](https://rick-morty-challenge-eta.vercel.app/)**
 
 ## Caracteristicas
 
@@ -159,7 +163,7 @@ const { setCharacter1, setCharacter2 } = useCharacterActions();
 ```
 
 ### Testing
-- 63 tests unitarios cubriendo:
+- 141 tests unitarios cubriendo:
   - Componentes (CharacterCard, CharacterGrid, Pagination, EpisodesList)
   - Store (useCharacterStore con selectores)
   - Utilidades (episodeFilters, extractors)

@@ -50,7 +50,7 @@ export default function NotFound() {
           <p className="text-xl sm:text-2xl text-white font-medium mb-2">
             <span className="text-green-400">&ldquo;¡Morty!</span> *burp* Te perdiste en el multiverso, Morty.
           </p>
-          <p className="text-lg sm:text-xl text-gray-300">
+          <p className="text-lg sm:text-xl text-subtle">
             Esta página está en otra dimensión.<span className="text-green-400">&rdquo;</span>
           </p>
           <p className="text-sm text-gray-500 mt-4 italic">— Rick Sanchez, Dimensión C-137</p>

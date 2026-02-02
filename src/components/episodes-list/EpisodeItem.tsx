@@ -17,7 +17,7 @@ export function EpisodeItem({ episode, color }: EpisodeItemProps) {
           >
             {episode.name}
           </p>
-          <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
+          <p className="text-xs text-muted mt-0.5">
             {episode.air_date}
           </p>
         </div>

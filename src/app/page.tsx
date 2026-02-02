@@ -13,18 +13,18 @@ export default function Home() {
     <main className="page-bg">
       <BackgroundOrbs />
 
-      <div className="relative z-10 p-4 sm:p-6 lg:p-8">
+      <div className="page-content">
         <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white mb-2">
+          <h2 className="page-title">
             Compara personajes y desbloquea sus aventuras
           </h2>
-          <p className="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto">
+          <p className="text-subtle text-sm sm:text-base max-w-2xl mx-auto">
             Selecciona dos personajes para descubrir qué episodios comparten
           </p>
         </div>
 
         <section className="container-section mb-8 sm:mb-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+          <div className="grid-characters">
             <CharacterList
               title="Personaje #1"
               selectedCharacter={character1}

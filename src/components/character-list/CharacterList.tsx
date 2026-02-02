@@ -39,7 +39,7 @@ export function CharacterList({
   return (
     <Card>
       <Card.Header>
-        <div className="flex items-center justify-between">
+        <div className="flex-between">
           <ListTitle title={title} />
           {selectedCharacter && <SelectedBadge character={selectedCharacter} />}
         </div>
@@ -56,7 +56,7 @@ export function CharacterList({
             onCharacterSelect={onCharacterSelect}
           />
         )}
-        <div className="mt-4 pt-4 border-t border-white/10">
+        <div className="divider">
           <Pagination
             currentPage={currentPage}
             totalPages={totalPages}

@@ -38,7 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang={SITE.language} className="scroll-smooth">
       <body className="antialiased page-bg flex flex-col min-h-screen">
         <main className="flex-1 px-4 sm:px-6 lg:px-8">
-          <header className="pt-6 pb-4 flex items-center justify-between">
+          <header className="pt-6 pb-4 flex-between">
             <Link
               href="/"
               className="inline-flex items-center gap-3 group"

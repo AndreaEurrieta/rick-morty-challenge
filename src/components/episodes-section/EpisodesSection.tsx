@@ -38,7 +38,7 @@ export default function EpisodesSection({ character1, character2 }: EpisodesSect
         <h2 className="text-2xl font-bold mb-6 text-center title-gradient-green-blue">
           Cargando Episodios...
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid-episodes">
           <Skeleton variant="tall" />
           <Skeleton variant="tall" />
           <Skeleton variant="tall" />
@@ -62,7 +62,7 @@ export default function EpisodesSection({ character1, character2 }: EpisodesSect
       <div className="text-center mb-6">
         <h2 className="text-2xl font-bold title-gradient-green-blue">Comparación de Episodios</h2>
         {character1 && character2 && (
-          <p className="text-gray-600 dark:text-gray-400 text-sm mt-1">
+          <p className="text-muted text-sm mt-1">
             <span className="font-semibold text-blue-600 dark:text-blue-400">{character1.name}</span>
             {' vs '}
             <span className="font-semibold text-purple-600 dark:text-purple-400">{character2.name}</span>
@@ -70,7 +70,7 @@ export default function EpisodesSection({ character1, character2 }: EpisodesSect
         )}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid-episodes">
         <EpisodesList
           episodes={character1Episodes}
           title={char1Name}

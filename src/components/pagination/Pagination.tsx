@@ -1,6 +1,7 @@
 'use client';
 
 import { Icon } from '@/components/ui';
+import { getPages } from '@/utils/getPages';
 
 interface PaginationProps {
   currentPage: number;
@@ -18,23 +19,6 @@ export default function Pagination({
   const canPrevious = currentPage > 1;
   const canNext = currentPage < totalPages;
 
-  const getPages = (): (number | '...')[] => {
-    if (totalPages <= 5) {
-      return Array.from({ length: totalPages }, (_, i) => i + 1);
-    }
-
-    const pages: (number | '...')[] = [1];
-    const start = Math.max(2, currentPage - 1);
-    const end = Math.min(totalPages - 1, currentPage + 1);
-
-    if (start > 2) pages.push('...');
-    for (let i = start; i <= end; i++) pages.push(i);
-    if (end < totalPages - 1) pages.push('...');
-    pages.push(totalPages);
-
-    return pages;
-  };
-
   return (
     <nav
       aria-label="Pagination"
@@ -51,7 +35,7 @@ export default function Pagination({
       </button>
 
       <div className="flex gap-1">
-        {getPages().map((page, index) =>
+        {getPages(currentPage, totalPages).map((page, index) =>
           page === '...' ? (
             <span key={`ellipsis-${index}`} className="px-2 py-2 text-gray-400 text-sm">
               ...
